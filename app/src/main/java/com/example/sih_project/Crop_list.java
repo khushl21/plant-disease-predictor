@@ -1,5 +1,6 @@
 package com.example.sih_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,7 +34,46 @@ public class Crop_list extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 CropItem cropItem = cropAdapter.getItem(i);
-                Toast.makeText(Crop_list.this, cropItem.getNames(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Crop_list.this, cropItem.getNames(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Crop_list.this, Plant_Info.class);
+                switch (cropItem.getNames()){
+                    case "Onion":
+                        intent.putExtra("Name", "Onion");
+                        break;
+                    case "Lettuce":
+                        intent.putExtra("Name", "Lettuce");
+                        break;
+                    case "Apple":
+                        intent.putExtra("Name", "Apple");
+                        break;
+                    case "Garlic":
+                        intent.putExtra("Name", "Garlic");
+                        break;
+                    case "Carrot":
+                        intent.putExtra("Name", "Carrot");
+                        break;
+                    case "Spinach":
+                        intent.putExtra("Name", "Spinach");
+                        break;
+                    case "Potato":
+                        intent.putExtra("Name", "Potato");
+                        break;
+                    case "Tomato":
+                        intent.putExtra("Name", "Tomato");
+                        break;
+                    case "Mango":
+                        intent.putExtra("Name", "Mango");
+                        break;
+                    case "Strawberry":
+                        intent.putExtra("Name", "Strawberry");
+                        break;
+                    case "Peach":
+                        intent.putExtra("Name", "Peach");
+                        break;
+
+                }
+                startActivity(intent);
+
             }
         });
     }
